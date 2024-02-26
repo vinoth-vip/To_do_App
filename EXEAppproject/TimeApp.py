@@ -1,5 +1,8 @@
-from tkinter import*
+from tkinter import *
 from datetime import datetime, timedelta
+import sys
+
+
 main=Tk()
 
 #StringVar for currentValue in R0C2
@@ -46,6 +49,9 @@ def timemanagement(time_str):
 
         return out_str
 #Called by the setValues button, looks for content in the entry box and updates the "current" label
+
+
+
 def setValues():
         content = entry.get()
         print("HI")
@@ -84,5 +90,4 @@ setValues.grid(row=9, column=0, columnspan=2)
 exitButton=Button(main, text='Exit Program',fg='white',bg='red',width=30, height=1,command=exitProgram)
 exitButton.grid(row=20, column = 0, columnspan=2)
 main.mainloop()
-
 

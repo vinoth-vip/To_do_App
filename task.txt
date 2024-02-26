@@ -3,8 +3,7 @@ BCFS
 Baxter
 Alcoa
 Calyx
-Marriot
-Alcoa
 CVS
 Campasus
 Ally
+exxonDirectV

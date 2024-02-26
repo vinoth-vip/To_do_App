@@ -14,6 +14,7 @@ def write_work(task_arg, filepath=FILEPATH):
         file.writelines(task_arg)
 
 
-if __name__ = "__main__":
-    print("Hi")
-    print(get_work())
+
+# if __name__ = "__main_-":
+#     print("Hi")
+#     print(get_work())
