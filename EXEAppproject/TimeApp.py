@@ -86,6 +86,7 @@ currentValue.grid(row=0,column=2)
 setValues=Button(text='Set Values',width=30,command=setValues)
 setValues.grid(row=9, column=0, columnspan=2)
 
+
 #Red button to end program
 exitButton=Button(main, text='Exit Program',fg='white',bg='red',width=30, height=1,command=exitProgram)
 exitButton.grid(row=20, column = 0, columnspan=2)

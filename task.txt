@@ -1,9 +1,9 @@
 Adyen
 BCFS
 Baxter
-Alcoa
 Calyx
 CVS
 Campasus
 Ally
-exxonDirectV
+exxon
+DirectV
