@@ -1,17 +1,28 @@
 import app1_functions
 import PySimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("task.txt"):
+    with open("task.txt", 'w') as file:
+        pass
 
 sg.theme("Black")
 clock = sg.Text('', key='clock')
 label = sg.Text("Type a task")
 input_box = sg.InputText(tooltip="Enter Task", key="task")
-add_button = sg.Button("Add", size=10)
+add_button = sg.Button("Add", size=10, key="Add")
 listbox = sg.Listbox(values=app1_functions.get_work(), key="tasks",
                      enable_events=True, size=[45, 10])
-edit_button = sg.Button("Edit")
-complete_button = sg.Button("Complete")
-exit_Button = sg.Button("Exit")
+edit_button = sg.Button("Edit", key="Edit")
+complete_button = sg.Button("Complete", key="Complete")
+exit_Button = sg.Button("Exit", key="Exit")
+
+# for icons:
+# add_button = sg.Button(size=2, image_source="add.png", tooltip="Add Task", key="Add")
+# edit_button = sg.Button(image_source="edit.png", tooltip="Edit Task", key="Edit")
+# exit_Button = sg.Button(image_source="exit.png", tooltip="Exit", key="Exit")
+# complete_button = sg.Button(image_source="complete.png", tooltip="Complete Task", key="Complete")
 
 window = sg.Window('My Task App',
                    layout=[[clock],
@@ -27,7 +38,7 @@ while True:
     match event:
         case "Add":
             tasks = app1_functions.get_work()
-            new_task = values['task']
+            new_task = values['task'] + "\n"
             tasks.append(new_task)
             app1_functions.write_work(tasks)
             window['tasks'].update(values=tasks)

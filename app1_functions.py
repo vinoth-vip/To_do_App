@@ -1,4 +1,4 @@
-FILEPATH = "../task.txt"
+FILEPATH = "task.txt"
 
 
 def get_work(filepath=FILEPATH):
@@ -12,9 +12,3 @@ def write_work(task_arg, filepath=FILEPATH):
     """Write the task list in the file"""
     with open(filepath, 'w') as file:
         file.writelines(task_arg)
-
-
-
-# if __name__ = "__main_-":
-#     print("Hi")
-#     print(get_work())

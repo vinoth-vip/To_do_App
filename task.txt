@@ -1,9 +1,0 @@
-Adyen
-BCFS
-Baxter
-Calyx
-CVS
-Campasus
-Ally
-exxon
-DirectV
