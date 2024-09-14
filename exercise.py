@@ -3,6 +3,7 @@ import math
 # ranking = ['John', 'Sen', 'Lisa']
 # index = ranking.index(input("Enter person name: ")) + 1
 # print(index)
+
 #--------------------------------------------------------------------------------------
 # mood = "AYIR"
 # strength = 2.17
@@ -29,13 +30,19 @@ import math
 
 #--------------------------------------------------------------------------------------
 # filenames = ['document', 'report', 'presentation']
-# for i, j in enumerate(filenames):
-#     row = f"{i}.{j.capitalize()}.txt"
+# for a, b in enumerate(filenames):
+#     row = f"{a}.{b.capitalize()}.txt"
 #     print(row)
+
+#---------------------------------------------------------------------------------
+# name = "jana"
+# comp = "wipro"
+# file = f"I'm {name} 134868 %*&@(*@ working in {comp}."
+# print(file)
 
 #--------------------------------------------------------------------------------------
 # ips = ['100.122.133.105', '100.122.133.111']
-# Index = int(input("Enter the index of the IP you want: "))
+# Index = int(input("Enter the index of the IP you want: ")) - 1
 # chosen_ip = ips[Index]
 # print(f"You chose {chosen_ip}")
 
@@ -59,7 +66,7 @@ import math
 #--------------------------------------------------------------------------------------
 # file = 'essay.txt'
 # file = open(file, 'w')
-# text = file.write("sworm")
+# text = file.write("thunder")
 # print(text)
 
 #--------------------------------------------------------------------------------------
@@ -71,7 +78,7 @@ import math
 
 #--------------------------------------------------------------------------------------
 
-# filenames = ['a.txt', 'b.txt', 'c.txt']
+# filenames = ['doc.txt', 'report.txt', 'presentation.txt']
 # for files in filenames:
 #     files = open(files, 'r')
 #     content = files.read()
@@ -108,13 +115,13 @@ import math
 # temperatures = [10, 12, 14]
 # temperatures = [str(i) + '\n' for i in temperatures]
 # file = open("file.txt", 'w')
-
+#
 # file.writelines(temperatures)
 
 #-------------------------------------------------------------------------------------------
 
-# numbers = [10.1, 12.3, 14.7]
-# numbers = [int(item) for item in numbers]
+# numbers = [10.1, 12.3, 14.7, "kjd"]
+# numbers = [type(item) for item in numbers]
 # print(numbers)
 
 #---------------------------------------------------------------------------------------------
@@ -168,7 +175,7 @@ import math
 # ---------------------------------------------------------------------------------------------------------
 
 # def get_max():
-#     grades = [9.6, 9.2, 9.7]
+#     grades = [-9.6, 9.2, 9.7]
 #     Values = f'Max: {max(grades)}, Min: {min(grades)}'
 #     return Values
 #
@@ -181,7 +188,8 @@ import math
 #     # Conversion factor: 1000 liters = 1 cubic meter
 #     cubic_meters = liters / 1000
 #     return cubic_meters
-
+#
+# print(liters_to_m3(4))
 # -----------------------------------------------------------------------------------------------
 
 # def strength(password):
@@ -192,7 +200,7 @@ import math
 #         return "Weak Password"
 #
 #
-# print(strength("Mypa300cskk"))
+# print(strength("sdjjs"))
 
 # -----------------------------------------------------------------------------------------------------------
 
@@ -222,10 +230,12 @@ import math
 
 # --------------------------------------------------------------------------------------------------
 
-# def write_work(filepath, task_arg):
-#     Value = filepath + task_arg
+# def write_work(path, task_arg, type="false"):
+#     Value = path + task_arg + type
 #     return Value
-
+#
+#
+# print(write_work("./pythonProject", "sum.txt", "True"))
 # ---------------------------------------------------------------------------------------------------
 
 # def person(name):
@@ -342,7 +352,6 @@ import math
 # print(liquid(fluids=fluid))
 #
 # exit()
-
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 

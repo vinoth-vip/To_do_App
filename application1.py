@@ -1,4 +1,4 @@
-# from app1_functions import get_work, write_work
+# from app1_functions import read_work, write_work
 import time
 
 import app1_functions
@@ -11,9 +11,10 @@ while True:
     user_action = user_action.strip()
 
     if user_action.startswith('add'):
+
         work = user_action[4:]
 
-        task = app1_functions.get_work()
+        task = app1_functions.read_work()
 
         task.append(work + '\n')
 
@@ -21,7 +22,7 @@ while True:
 
     elif user_action.startswith('show'):
 
-        task = app1_functions.get_work()
+        task = app1_functions.read_work()
 
         for index, pending in enumerate(task):
             pending = pending.strip('\n')
@@ -34,7 +35,7 @@ while True:
             print(number)
             number = number - 1
 
-            task = app1_functions.get_work()
+            task = app1_functions.read_work()
 
             new_work = input("Enter the new task: ")
             task[number] = new_work + '\n'
@@ -48,7 +49,7 @@ while True:
         try:
             number = int(user_action[9:])
 
-            task = app1_functions.get_work()
+            task = app1_functions.read_work()
 
             index = number - 1
             task_to_remove = task[index].strip('\n')

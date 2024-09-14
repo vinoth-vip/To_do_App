@@ -12,17 +12,17 @@ clock = sg.Text('', key='clock')
 label = sg.Text("Type a task")
 input_box = sg.InputText(tooltip="Enter Task", key="task")
 add_button = sg.Button("Add", size=10, key="Add")
-listbox = sg.Listbox(values=app1_functions.get_work(), key="tasks",
+listbox = sg.Listbox(values=app1_functions.read_work(), key="tasks",
                      enable_events=True, size=[45, 10])
 edit_button = sg.Button("Edit", key="Edit")
 complete_button = sg.Button("Complete", key="Complete")
 exit_Button = sg.Button("Exit", key="Exit")
 
 # for icons:
-# add_button = sg.Button(size=2, image_source="add.png", tooltip="Add Task", key="Add")
-# edit_button = sg.Button(image_source="edit.png", tooltip="Edit Task", key="Edit")
-# exit_Button = sg.Button(image_source="exit.png", tooltip="Exit", key="Exit")
-# complete_button = sg.Button(image_source="complete.png", tooltip="Complete Task", key="Complete")
+add_button = sg.Button(size=2, image_source="add.png", tooltip="Add Task", key="Add")
+edit_button = sg.Button(image_source="edit.png", tooltip="Edit Task", key="Edit")
+exit_Button = sg.Button(image_source="exit.png", tooltip="Exit", key="Exit")
+complete_button = sg.Button(image_source="complete.png", tooltip="Complete Task", key="Complete")
 
 window = sg.Window('My Task App',
                    layout=[[clock],
@@ -33,11 +33,11 @@ window = sg.Window('My Task App',
                    font=('Helvetica', 20))
 
 while True:
-    event, values = window.read(timeout=200)
+    event, values = window.read(timeout=5)
     window["clock"].update(value=time.strftime("%b %d %Y, %H:%M:%S"))
     match event:
         case "Add":
-            tasks = app1_functions.get_work()
+            tasks = app1_functions.read_work()
             new_task = values['task'] + "\n"
             tasks.append(new_task)
             app1_functions.write_work(tasks)
@@ -47,7 +47,7 @@ while True:
                 task_to_edit = values['tasks'][0]
                 new_task = values['task'] + "\n"
 
-                tasks = app1_functions.get_work()
+                tasks = app1_functions.read_work()
                 index = tasks.index(task_to_edit)
                 tasks[index] = new_task
                 app1_functions.write_work(tasks)
@@ -57,7 +57,7 @@ while True:
         case "Complete":
             try:
                 task_to_complete = values['tasks'][0]
-                tasks = app1_functions.get_work()
+                tasks = app1_functions.read_work()
                 tasks.remove(task_to_complete)
                 app1_functions.write_work(tasks)
                 window['tasks'].update(values=tasks)

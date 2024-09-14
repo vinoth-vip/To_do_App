@@ -1,7 +1,7 @@
 FILEPATH = "task.txt"
 
 
-def get_work(filepath=FILEPATH):
+def read_work(filepath=FILEPATH):
     """ Read a text file and return the list of task"""
     with open(filepath, 'r') as file_local:
         task_local = file_local.readlines()
